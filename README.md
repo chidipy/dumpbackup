@@ -62,7 +62,9 @@ This program is implemented by bash script. So it is easy to install.
 ```
 
 ### The format of this list file
+```
 <device path for backup> <filesystem name> <backup image name> <backup image storage directory> [<compression command> [<pre-buckup execution command path> [<post-buckup execution command path>]]]
+```
 
 * Each item is separated by a tab character. Consecutive tab characters are recognized as empty values.
 * One line per file system (no line feed)
@@ -99,5 +101,5 @@ This program is implemented by bash script. So it is easy to install.
 GPL-3.0 License
 
 ## Author
-[chidipy] (https://chidipy.jpn.com)
-webmaster@chidipy.jpn.com
+chidipy (https://chidipy.jpn.com)
+mailto:webmaster@chidipy.jpn.com
