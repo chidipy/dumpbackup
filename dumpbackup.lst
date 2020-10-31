@@ -1,0 +1,12 @@
+# list sample
+# /dev/rootvg/rootlv	xfs	rootvg-rootlv-root	/backup	gzip
+# /dev/sda1	ext4	boot	 /backup
+# <source device path><TAB><filesystem><TAB><backup image name><TAB><distination backup image save directory>[<TAB><compress command>[<TAB><preexec command path>[<TAB><postexec command path>]]]
+#    <source device path>                      :(Required)disk device or path(vfat only) that this script acquires a dump image.
+#    <filesystem>                              :(Required)filesystem name. xfs ext4 ext3 vfat
+#    <backup image name>                       :(Required)name that this script adds to a dump image.
+#    <distination backup image save directory> :(Required)directory that this script save a dump image.
+#    <compress command>                        :(Option)command to use so that this script compresses a dump image. if omit, no compress.
+#    <preexec command path>                    :(Option)command to carry out before this script acquires a dump image. if omit, no exec.
+#    <postexec command path>                   :(Option)command to carry out after this script acquires a dump image. if omit, no exec.
+
