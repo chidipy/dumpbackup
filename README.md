@@ -60,6 +60,24 @@ This program is implemented by bash script. So it is easy to install.
 # cp diskdump.lst <INSTALL DIRECTORY>/<ANY FILENAME>.lst
 # vi <INSTALL DIRECTORY>/<ANY FILENAME>.lst
 ```
+
+### The format of this list file
+<device path for backup> <filesystem name> <backup image name> <backup image storage directory> [<compression command> [<pre-buckup execution command path> [<post-buckup execution command path>]]]
+
+* Each item is separated by a tab character. Consecutive tab characters are recognized as empty values.
+* One line per file system (no line feed)
+* Multi-line definition is possible (multiple file system)
+
+#### sample
+```
+/boot/efi	vfat	boot-efi	/mnt/landisk/server_bkup
+/dev/sda1	ext4	sda1-boot	/mnt/landisk/server_bkup
+/dev/rootvg/rootlv	xfs	rootvg-rootlv-root	/mnt/landisk/server_bkup	gzip
+/dev/rootvg/varlv	xfs	rootvg-varlv-var	/mnt/landisk/server_bkup	gzip
+/dev/rootvg/dbdatalv	xfs	rootvg-dbdatalv-dbdata	/mnt/landisk/server_bkup	gzip	/path/to/bin/prebackup_stopdatabase.sh   /path/to/bin/postbackup_startdatabase.sh
+```
+
+
 8. (Optional) Set up scheduled execution.
 ```
 # vi /etc/cron.d/dumpbackup
@@ -81,4 +99,5 @@ This program is implemented by bash script. So it is easy to install.
 GPL-3.0 License
 
 ## Author
-
+[chidipy] (https://chidipy.jpn.com)
+webmaster@chidipy.jpn.com
